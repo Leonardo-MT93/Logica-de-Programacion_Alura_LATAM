@@ -1,0 +1,48 @@
+<canvas width="600" height="400">
+
+</canvas>
+
+<script>
+
+    function dibujarRectangulo(x, y, base, altura, color) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, base, altura);
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y, base, altura);
+    }
+
+    function escribirTexto(x , y, texto) {
+        var pantalla = document.querySelector("canvas");
+        var pincel = pantalla.getContext("2d");
+
+        pincel.font="15px Georgia";
+        pincel.fillStyle="black";
+        pincel.fillText(texto, x, y);    
+    }
+     var serie2009 = [6,47,41,3,3];
+     var serie2019 = [81,9,3,3,4];
+     var colores = ["blue","green","yellow","red", "gray"];
+     function dibujarBarra(x,y,colores,serie,texto){
+        /*dibujarRectangulo(x,y, 100,6, "blue");
+        dibujarRectangulo(x,y+6, 100,47, "green");
+        dibujarRectangulo(x,y+6+47, 100,41, "yellow");
+        dibujarRectangulo(x,y+6+47+41, 100,3, "red");
+        dibujarRectangulo(x,y+ 6+47+41+3, 100,3, "gray");
+        */
+
+        var acumulador = 0;
+        for(var z = 0; z<5; z++){
+                 
+                dibujarRectangulo(x, y+acumulador, 100,serie[z], colores[z]);
+                acumulador = acumulador + serie[z];
+             }
+        escribirTexto(x+35,y-10, texto);     
+            
+     }  
+    dibujarBarra(50,50,colores,serie2009,"2009");
+    dibujarBarra(200,50,colores,serie2019,"2019");
+
+</script>

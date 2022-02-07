@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+<h1>Calculo de Edad Media - Promedio </h1>
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br><br>");    
+    }  
+
+    function imprimir(frase) {
+        document.write(frase);
+        saltarLinea();
+    }
+    var cantFamilia;
+    var acumuladorEdades = 0;
+    var media;
+    cantFamilia = parseInt(prompt("Ingrese la cantidad de familiares: "));
+    for(var i = 0; i < cantFamilia; i++){
+        edad = parseInt(prompt("Ingrese la Edad: "));
+        acumuladorEdades+= edad;
+        
+    }
+    media = acumuladorEdades/cantFamilia;
+    imprimir("La sumatoria de las edades es: " + acumuladorEdades);
+    imprimir("La media de las edades de la familia es: " + media);
+
+
+</script> 

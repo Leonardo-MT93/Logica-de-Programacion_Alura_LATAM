@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<h1>Calculadora IMC</h1>
+<script>
+function saltoLinea(){
+	document.write("<br>");
+}
+function imprimir(mensaje){
+	document.write(mensaje);
+	saltoLinea();
+}	
+function calcularImc(peso,altura){
+	imc = peso / (altura * altura);
+	return imc;
+}
+
+
+document.write("El promedio entre el IMC de leonardo y julieta es: " + (calcularImc(80,1.80) + calcularImc(65, 1.60))/2 );
+
+
+</script>

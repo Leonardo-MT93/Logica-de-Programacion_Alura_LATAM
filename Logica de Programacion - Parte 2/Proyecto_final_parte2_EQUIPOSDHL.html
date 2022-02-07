@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<script>
+var nombre = prompt("Ingrese el nombre del equipo: ");
+var cantidad = prompt("Ingrese la cantidad de integrantes: ");
+var input = document.querySelector("input");
+var button = document.querySelector("button");
+var integrantes = [];
+var contador = 0;
+var lider;
+var ref1;
+var ref2;
+
+while(contador < cantidad){
+    var flag = 0;
+    var integrante = prompt("Ingrese el nombre del integrante: ");
+    for(var x=0; x<cantidad; x++){
+        
+        if(integrante == integrantes[x]){
+            alert("REPETIDO");
+            flag = 1;
+            break;
+        }
+    }
+    if(flag ==  0){
+        integrantes.push(integrante);
+        contador++;
+    }
+
+}
+
+document.write("El nombre del equipo es: " + nombre + "<br>");
+lider = designar(integrantes, "Ingrese el nombre del Lider: ");
+document.write("El nombre del lider es: " + lider + "<br>");
+ref1 = designar(integrantes, "Ingrese el nombre del 1er Referente: ");
+document.write("El nombre del 1er Referente es: " + ref1 + "<br>");
+ref2 = designar(integrantes, "Ingrese el nombre del 2do Referente: ");
+document.write("El nombre del 2do Referente es: " + ref2 + "<br>");
+
+mostrarIntegrantes(integrantes);
+
+function mostrarIntegrantes(integrantes){
+    document.write("<br>Los integrantes del equipo son: <br><br>");
+    for(var z = 0; z < integrantes.length; z++){
+        document.write("Integrante Numero: " + (z+1) + " es " + integrantes[z] + "<br>");
+    }
+}
+
+//reformulacion de codigo
+function designar(integrantes, mensaje){
+    var persona;
+    var existe;
+persona = prompt(mensaje);
+existe = integrantes.includes(persona); ///SE BUSCA AL LIDER EN TODO EL ARRAY
+if(existe == true){
+    return persona;
+}
+while(!existe){
+    alert("Nombre ingresado no encontrado. Reintente nuevamente. ")
+    persona = prompt(mensaje);
+    existe  = integrantes.includes(persona);
+    if(existe){
+        return persona;
+        break;
+    }
+}
+}
+
+
+</script>

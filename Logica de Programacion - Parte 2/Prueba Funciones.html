@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<p>
+    <label for="tema2">Tema 2</label>
+    <input type="checkbox" value="tema2" name="temas" id="tema2"    class="valores">
+
+</p>
+<input>
+<button>Comprobar</button>
+<script>
+var texto = prompt("Ingrese una palabra: ");
+texto = reemplazarletra('a', 'ai', texto);
+texto = reemplazarletra('e', 'enter', texto);
+texto = reemplazarletra('i', 'imes', texto);
+texto = reemplazarletra('o', 'ober', texto);
+texto = reemplazarletra('u', 'ufat', texto);
+alert(texto);
+function reemplazarletra(letra, palabra, texto){
+    var auxiliar;
+    auxiliar = texto.replaceAll(letra, palabra);
+    texto = auxiliar;
+    return texto;
+}
+</script>

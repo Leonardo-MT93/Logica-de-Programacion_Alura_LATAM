@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<h1>Turnos de Vacunacion - COVID-19</h1>
+<br>
+<script>
+	function space(){
+		document.write("<br><br>");
+	}	
+	function message(text){
+		document.write(text);
+		space();
+	}
+	function data(name, age, birthday, city, status){
+		document.write( name + ", gracias por contactarse con nosotros. <br>");
+		document.write("Su edad es " + age + ", y su cumpleaños es " + birthday + ". Actualmente recide en " + city + ".<br>");
+		document.write("Respecto a la informacion brindada, usted posee " + status + " vacuna/s. La vacuna que le proporcionaron hasta el momento es: " + vaccine + ".");
+		space();
+	}
+	var name;
+	var age;
+	var birthday;
+	var city;
+	var status;
+	var vaccine;
+
+	name = prompt("Hola! Gracias por comunicarse con nosotros! Por favor indiquenos cuál es su nombre: ");
+	age = prompt("Indique su edad: ");
+	birthday = prompt("Indique cual es su fecha de cumpleaños: (Formato: dd/mm/yyyy)");
+	city = prompt("Indique en que ciudad vive: ");
+	status = prompt("Posee alguna dosis actualmente? (0/1/2)");
+	vaccine = prompt("En caso de poseer alguna dosis, indique cual/cuales por favor: ");
+
+	data(name, age, birthday, city, status, vaccine);
+</script>
